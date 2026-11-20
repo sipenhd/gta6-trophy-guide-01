@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Won't Platinum Itself — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: checklist, roadmap, missables and cited guides.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
+    <h1>Vice City won't platinum itself.</h1>
+    <p class="lede">Every trophy, every grade, every missable moment — a checklist that remembers your progress, a five-stage road to the platinum, and a guide for each trophy written in our own words with its sources named. No account, no network, no ads. Just Leonida.</p>
+    <p class="grade-counts" id="gradeCounts" aria-label="Trophies by grade"></p>
+    <nav class="views" aria-label="Guide sections">
+      <button type="button" id="viewChecklist" class="view-tab is-active" data-view="checklist">Checklist</button>
+      <button type="button" id="viewRoadmap" class="view-tab" data-view="roadmap">Platinum roadmap</button>
+      <button type="button" id="viewMissables" class="view-tab" data-view="missables">Missables <span class="pill" id="missableCount"></span></button>
+    </nav>
+  </div>
+  <div class="hero-progress" aria-label="Platinum progress">
+    <svg class="ring" viewBox="0 0 120 120" width="132" height="132" role="img" aria-labelledby="ringLabel">
+      <title id="ringLabel">Platinum progress ring</title>
+      <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"></circle>
+    </svg>
+    <div class="ring-text"><span id="progressPct">0%</span><small id="progressCount">0 of 55 earned</small></div>
+    <p class="ring-note" id="progressNote">The platinum is 54 trophies away.</p>
+  </div>
+</header>
+
+<div class="toolbar">
+  <label class="spoiler-toggle"><input type="checkbox" id="spoilerToggle"> <span>Hide story spoilers</span> <small>story names &amp; descriptions stay “???” until earned</small></label>
+  <div class="toolbar-actions">
+    <button type="button" id="exportBtn">Export progress</button>
+    <label class="import-btn">Import progress <input type="file" id="importFile" accept="application/json"></label>
+  </div>
+</div>
+
+<section class="controls" aria-label="Filters">
+  <label>Search <input type="search" id="searchInput" placeholder="Search a trophy name…"></label>
+  <label>Grade <select id="gradeFilter"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label>Kind <select id="kindFilter"><option value="all">All kinds</option><option value="story">Story</option><option value="missable">Missable</option><option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="online">Online</option></select></label>
+  <label>Progress <select id="earnedFilter"><option value="all">Earned &amp; not earned</option><option value="earned">Earned only</option><option value="todo">Not earned yet</option></select></label>
+  <p class="result-count" id="resultCount"></p>
+</section>
+
+<p class="missable-banner" id="missableBanner" hidden>⚠ <strong>Missable trophies ahead.</strong> The ones flagged below are tied to a story moment or a one-off event in their official description. Do them when the chance appears — after the moment passes you may need mission replay or a new playthrough.</p>
+
+<main class="layout">
+  <section id="checklistView" aria-label="Trophy checklist">
+    <ol class="trophy-list" id="trophyList"></ol>
+    <p class="empty-note" id="emptyNote" hidden>No trophies match these filters. Try clearing the search or choosing “All kinds”.</p>
+  </section>
+
+  <aside class="detail" id="detailPanel" aria-label="Trophy detail">
+    <p class="detail-hint" id="detailHint">Pick a trophy to see its official description, the guide and its sources.</p>
+    <article id="detailCard" hidden>
+      <p class="detail-grade" id="detailGrade"></p>
+      <h2 id="detailName"></h2>
+      <p class="detail-kind" id="detailKind"></p>
+      <h3>Official description</h3>
+      <blockquote id="detailDescription"></blockquote>
+      <h3>How to get it</h3>
+      <p id="detailGuide"></p>
+      <ol class="detail-steps" id="detailSteps" hidden></ol>
+      <h3>Sources</h3>
+      <ul class="detail-sources" id="detailSources"></ul>
+      <label class="detail-earned"><input type="checkbox" id="detailEarned"> <span>Mark as earned</span></label>
+    </article>
+  </aside>
+</main>
+
+<section id="roadmapView" class="roadmap" hidden aria-label="Platinum roadmap">
+  <h2>The road to the platinum, in five stages</h2>
+  <p class="roadmap-intro">Built from the official descriptions alone: which story chapters and missions, which collectibles and counts, in what order. The platinum needs all 54 other trophies, so the stages are the order that wastes the least effort — story first, missables while the story is still in front of you, then the long sweeps, then cleanup.</p>
+  <ol class="stages" id="roadmapStages"></ol>
+</section>
+
+<footer class="footer">
+  <p><strong>Sources for the list:</strong> the official trophy names, descriptions and grades as listed by <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> and <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a> (the two agree on every name, description and grade); counts such as the 42 Shooting Range challenges are PSN's tracked counts as those sites list them. Each trophy's guide names its own sources beside it. Guides are written for this entry in our own words — never copied.</p>
+  <p><strong>Honest note:</strong> where a guide states a fact the official description does not pin down, it says so. This is an unofficial fan guide, not affiliated with Rockstar Games, and it uses no Rockstar logo, artwork or game screenshots. It works fully offline: it fetches only its own files and saves your progress in this browser.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
